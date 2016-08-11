@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Hero} from './hero';
 import {HeroService} from './hero.service';
-import {stringify} from "querystring";
+
 
 @Component({
     selector: 'my-app',
@@ -29,5 +29,9 @@ export class AppComponent implements OnInit {
     onSelect(hero:Hero) {
         this.selectedHero = hero;
         console.log(hero);
+        this.heroService.sendHeroes(hero);
+
     }
+
+
 }
